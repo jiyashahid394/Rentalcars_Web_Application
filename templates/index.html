@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{% block title %} Home {% endblock title  %}
+
+{% block body %}
+<div class="container" style="height: 500px; width: 1200px; background-color: black; margin-top: 20px;">
+  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/cor1.PNG" class="w-100" alt="..." style="height: 500px;">
+        <div class="carousel-caption">
+          <p>Discover the Freedom of Travel</p>
+          <h2>Explore Our Wide Range of Rental Cars</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/cor222.PNG" class="w-100" alt="..." style="height: 500px;">
+        <div class="carousel-caption">
+          <p>Your Perfect Ride Awaits</p>
+          <h2>Quality Cars, Affordable Prices</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/cor3.PNG" class="w-100" alt="..." style="height: 500px;">
+        <div class="carousel-caption">
+          <p>Hassle-Free Booking</p>
+          <h2>Easy Online Reservations</h2>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/pic2.PNG" class="w-100" alt="..." style="height: 500px;">
+        <div class="carousel-caption">
+          <p>Luxury Meets Comfort</p>
+          <h2>Upgrade Your Travel Experience</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
+<!-- Add your JavaScript code here to implement the timer -->
+<script>
+  $(document).ready(function() {
+    // Set an interval to change the carousel slide every 15 seconds (adjust as needed)
+    setInterval(function() {
+      $('.carousel').carousel('next');
+    }, 15000);
+  });
+</script>
+
+  <div class="container" style="height: 450px; width: 1110px; margin-top: 70px; text-align: center;  padding: 20px; font-family: Serif; font-weight: 1000; background-color:#232020;  color: #E9CF27; border-radius: 30px;"> 
+    <h1> Categories </h1>
+    <div class="inner-container" >
+        <a href="/Silver">
+        <img src="/static/silver2.JPG" class="w-100" alt="...">
+        <div class="caption" style= "padding:15px;" >
+            <a><h3>Siver Class </h3>
+        </div>
+    </div>
+    <div class="inner-container" >
+        <a href="/Gold">
+        <img src="/static/gold.JPG" class="w-100" alt="...">
+        <div class="caption" style= "padding:15px;" >
+            <a><h3>Gold Class </h3>
+        </div>
+    </div>
+    <div class="inner-container" >
+        <a href="/Platinum">
+        <img src="/static/platinum2.JPG" class="w-100" alt="...">
+        <div class="caption" style= "padding:15px;" >
+            <a><h3>Platinum Class </h3>
+        </div>
+    </div>
+</div>
+
+  <div class="video-container"> 
+    <video id="uploaded-video" controls style="height: 450px; width: 1110px; margin-top: 70px; margin-left:120px;">
+      <!-- Placeholder video source -->
+      <source src="static/video" type="video/MP4">
+    </video>
+    <input type="file" id="video-upload" accept="static/video">
+
+  <script>
+    const videoUpload = document.getElementById('video-upload');
+    const uploadedVideo = document.getElementById('uploaded-video');
+
+    videoUpload.addEventListener('change', function () {
+      const file = this.files[0];
+      if (file) {
+        const objectURL = URL.createObjectURL(file);
+        uploadedVideo.src = objectURL;
+      }
+    });
+  </script>
+
+  </div>
+
+  <div class="container" style="height: 350px; width: 1110px; margin-top: 70px; border: 1px solid white; text-align: center;  padding: 25px; font-family: Serif; font-weight: 1000; background-color: #21211F; color: #E9CF27;"> 
+    <h1>Customer Reviews</h1><br>
+    <div class="slider-container"style= " margin-top: 20px;">
+      <div class="slider">
+        <div class="slide" style="width: 1500px; ">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <div class="slide" style="width: 1500px; ">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <div class="slide" style="width: 1500px; ">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <div class="slide" style="width: 1500px;">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <div class="slide" style="width: 1500px;">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <div class="slide" style="width: 1500px;">
+          <img src="/static/review.png" class="w-100" alt="...";>
+        </div>
+        <!-- Add more slides with different widths as needed -->
+      </div>
+    </div>
+    <script>
+      // Get the slider element and its children
+      const slider = document.querySelector(".slider");
+      const slides = slider.children;
+    
+      // Define the index of the currently displayed slide
+      let currentIndex = 0;
+    
+      // Function to show the next slide
+      function showNextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSliderPosition();
+      }
+    
+      // Function to update the position of the slider
+      function updateSliderPosition() {
+        const slideWidth = slides[currentIndex].offsetWidth;
+        slider.style.transform = `translateX(-${slideWidth * currentIndex}px)`;
+      }
+    
+      // Automatically transition to the next slide every 3 seconds
+      setInterval(showNextSlide, 3000);
+    </script>
+  </div>
+
+{% endblock body %}
+

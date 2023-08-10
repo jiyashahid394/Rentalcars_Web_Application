@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %} booking {% endblock title  %}
+
+{% block body %}
+<br>
+<div class="container" id="Booking" style="height: 500px; width: 1110px; margin-top: 70px; ; text-align: center;  padding: 25px; margin-top: 50px; font-family: Serif; font-weight: 1000; background-color:#232020 ; color: #E9CF27; border-radius: 30px;"> 
+    <h1 id="booking">Book Your Car</h1><br>
+    
+        <form action="{% url 'Booking' %}" method="POST">
+            {% csrf_token %}
+        
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            
+    
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="number">Number:</label>
+            <input type="text" id="number" name="number" required><br>
+    
+            <label for="fdate">From Date:</label>
+            <input type="date" id="fdate" name="fdate" required><br>
+    
+            <label for="tdate">To Date:</label>
+            <input type="date" id="tdate" name="tdate" required><br>
+
+        <label for="car">Select a Car:</label>
+        <select id="car" name="car" placeholder="Select your car" required>
+            <option value="car1">Select your car</option>
+            <option value="Honda City">Honda City</option>
+            <option value="Honda Civic">Honda Civic</option>
+            <option value="Toyota Corolla">Toyota Corolla</option>
+            <option value="Honda BRV">Honda BRV</option>
+            <option value="Toyota Vitz">Toyota Vitz</option>
+            <option value="Toyota Aqua">Toyota Aqua</option>
+            <option value="Toyota Yaris">Toyota Yaris</option>
+            <option value="Hyundai Elantra">Hyundai Elantra</option>
+            <option value="Changan Alsvin">Changan Alsvin</option>
+            <option value="KIA Sportage">KIA Sportage</option>
+            <option value="Toyota Fortuner">Toyota Fortuner</option>
+            <option value="Toyota Landcruiser">Toyota Landcruiser</option>
+            <option value="Toyota Landcruiser Prado">Toyota Landcruiser Prado</option>
+            <option value="MG HS">MG HS</option>
+            <option value="Hyundai Tucson">Hyundai Tucson</option>
+            <option value="Toyota Hilux">Toyota Hilux</option>
+            <option value="Honda Vezel">Honda Vezel</option>
+            <option value="Oshan X7">Oshan X7</option>
+            <option value="Cardillac Limousine">Cardillac Limousine</option>
+            <option value="Mercedes Benz">Mercedes Benz</option>
+            <option value="Rolls Royce Phantom">Rolls Royce Phantom</option>
+            <option value="BMW 5 series">BMW 5 series</option>
+            <option value="Audi A series">Audi A series</option>
+            <option value="BMW 7 series">BMW 7 series</option>
+            <option value="Toyota Tundra">Toyota Tundra</option>
+            <option value="Nissan 350z">Nissan 350z</option>
+            <option value="Lamborghini Aventador">Lamborghini Aventador</option>
+            <!-- Add more car options as needed -->
+        </select><br>
+        <input type="submit" value="Book Now">
+        
+    </form>
+
+    
+  </div>
+
+{% endblock body %}

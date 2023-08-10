@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact {% endblock title  %}
+
+{% block body %}
+<div class="container" style="height: 400px width: 800px; background-color: black; margin-top: 20px;"> 
+    <img src="/static/contact2.png"  class="w-100" alt="..." style="height: 500px;">
+    <div class="carousel-caption" style= "margin-top: 210px; font-size: 50px; font-weight: 900">
+        <p>Contact </p>
+ 
+
+</div>
+
+<div class="container" style="height: 400px; width: 1450px; margin-top: 70px; text-align: center;  padding: 20px; font-family: Serif;  color: #FEFEFE; "> 
+   
+    <div class="inner-container" style="width: 300px; height: 250px; border: 1px solid white; float: left; margin-left: 20px; border-radius: 20px;">
+        <img src="static/address.PNG" class="picture" alt="..." style="max-width: 100%; max-height: 130px; margin-top: -12px; margin-bottom: -20px;  ">
+        <h2>Location:</h2>
+        <p class="caption" style="font-size: 18px;">
+            Al Hafeez Executive, Gulberg 3,<br>
+             Lahore, Pakistan
+        </p>
+    </div>
+
+    <div class="inner-container" style="width: 300px; height: 250px; border: 1px solid white; float: left; margin-left: 50px; border-radius: 20px;">
+        <img src="static/phone3.PNG" class="picture" alt="..." style="max-width: 100%; max-height: 270px; margin-top: -80px; margin-bottom: -85px;  ">
+        <h2>Phone Number:</h2>
+        <p class="caption" style="font-size: 18px;">
+            Head: +923 25 785 2727 <br>
+            Rent A Car: 042 35487154 <br>
+            Mobile: +921248563745
+        </p>
+    </div>
+
+    <div class="inner-container" style="width: 300px; height: 250px; border: 1px solid white; float: left; margin-left: 50px; border-radius: 20px;">
+        <img src="static/email.PNG" class="picture" alt="..." style="max-width: 100%; max-height: 130px; margin-top: -12px; margin-bottom: -20px;  ">
+        <h2>Email:</h2>
+        <p class="caption" style="font-size: 18px;">
+            rentacarinfo@carsrental.com <br>
+            head2xx@carsrental.com<br>
+            contact@carsrental.com
+        </p>
+    </div>
+
+</div>
+
+
+<div class="container" style="height: 550px; margin-top: 30px; max-width: 500px; margin-right: 15px; padding: 20px; background-color:#232020; color: #E9CF27; font-family: Serif; font-weight: 1000">
+
+    <br><form action="/contact" method="post">
+        {% csrf_token %}
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required style="background-color: #232020; color: white;">
+
+        <label for="email">Email:</label>
+        <input type="text"  class="form-control" id="email" name="email" placeholder="Your Email" required style="background-color: #232020; color: white;">
+
+        <label for="subject">Subject:</label>
+        <input type="text"  class="form-control" id="subject" name="subject" placeholder="Subject" required style="background-color: #232020; color: white;"> 
+
+        <label for="message">Message</label>
+        <textarea id="message"  class="form-control" name="message" rows="6" placeholder="Your Message" required style="background-color: #232020; color: white;"></textarea>
+
+        <input type="submit" value="Send Message" style="margin-right: 10px; float: left;">
+    </form>
+</div>
+
+<div class="container" style="height: 550px; margin-top: -570px; max-width: 550px; alignment: left; margin-left: 25px; color: white; font-family: Serif; font-size: 20px;">
+    <h1> For our Customer</h1>
+<p> Hello,
+
+    Thank you for visiting our website! We value your interest and want to make sure your experience with us is seamless and enjoyable. <br><br>
+    
+    If you have any questions, feedback, or need assistance with our products or services, please don't hesitate to reach out. Our dedicated support team is here to help. <br><br>
+    
+    You can get in touch with us by filling out the contact form below or by using the provided email address and phone number. We promise to respond as promptly as possible.<br><br>
+    
+    Your input is crucial to our improvement, so don't hesitate to share your thoughts. We look forward to hearing from you!<br><br>
+    
+    Best regards, <br>
+    Rental Cars Team
+</p>
+
+</div>
+
+{% endblock body %}
